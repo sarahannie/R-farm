@@ -24,9 +24,18 @@ body{
 }
 
 @media only screen and (min-width: 600px) {
+    .navbar-brand{
+        color: white;   
+    }
+    .navbar{
+        background-color: #10571b;
+    }
     .navsb{
         padding-left: 500px;
     }
+    .navbar-nav .nav-link:not(.dropdown-toggle) {
+       color: white;
+      }
 }
 
 @media only screen and (max-width:590px){
