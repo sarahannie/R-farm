@@ -23,9 +23,12 @@ body{
     
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 890px) {
     .navbar-brand{
         color: white;   
+    }
+    .navbar-brand:hover{
+        color: rgb(230, 231, 232);
     }
     .navbar{
         background-color: #10571b;
@@ -38,7 +41,7 @@ body{
       }
 }
 
-@media only screen and (max-width:590px){
+@media only screen and (max-width:890px){
     .navbar-collapse {
         position: fixed;
         top: 56px;
