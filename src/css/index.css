@@ -9,6 +9,7 @@ body{
 .navbar{
     padding-top: 0px;
     padding-bottom:0px ;
+    background-color: #10571b;
 }
 .nav-item{
     padding-left: 50px;
@@ -25,14 +26,11 @@ body{
 }
 
 @media only screen and (min-width: 890px) {
-    .navbar-brand{
-        color: white;   
-    }
+  .navbar-brand {
+    color: white; /* change color to your desired value */
+  }
     .navbar-brand:hover{
         color: rgb(230, 231, 232);
-    }
-    .navbar{
-        background-color: #10571b;
     }
     .navsb{
         padding-left: 500px;
@@ -43,6 +41,10 @@ body{
 }
 
 @media only screen and (max-width:890px){
+  .navbar-brand {
+    color: white;
+    padding-left: 100px;
+  }
     .navbar-collapse {
         position: fixed;
         top: 56px;
@@ -116,9 +118,38 @@ body{
 }
 
 @media only screen and (max-width:890px){
-  .carousel{
-    z-index: 1 ;
-  }
+ .carousel{
+  margin-top: 50px;
+ }
+
+ .carousel-content {
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  background-color: rgba(213, 218, 213, 0.4);
+  padding: 1rem;
+}
+ .next{
+  font-size: 20px;
+  font-family: 'Volkhov', serif;
+}
+.Buy{
+  font-size: 10px;
+  font-family: 'Volkhov', serif;
+}
+.started{
+  font-size:5px;
+  font-family: 'Volkhov', serif;
+}
+.btn{
+  font-family: 'Volkhov', serif;
+  padding: 5px 27px;
+  text-decoration: solid;
+}
+
 }
 
 /* styling of carousel end */
