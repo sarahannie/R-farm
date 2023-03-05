@@ -75,3 +75,16 @@ body{
 
 
 /* Styling for navbar end */
+
+/* styling of carousel start */
+.carousel img {
+  max-height: 400px;
+}
+
+@media only screen and (max-width:890px){
+  .carousel{
+    z-index: 1 ;
+  }
+}
+
+/* styling of carousel end */
