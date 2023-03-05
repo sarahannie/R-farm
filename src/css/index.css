@@ -184,3 +184,17 @@ body{
 
 
 /* styling of what new end */
+
+/* styling starter start */
+.img-starter{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+.bg1{
+  background-color: rgb(251, 248, 243);
+}
+
+/* styling starter end */
