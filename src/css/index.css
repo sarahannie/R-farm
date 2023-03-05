@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 body{
     margin: 0px;
     padding: 0px;
@@ -78,7 +79,40 @@ body{
 
 /* styling of carousel start */
 .carousel img {
-  max-height: 400px;
+  max-height: 500px;
+}
+
+.carousel-content  div{
+  background-color: white;
+  padding: 3rem;
+}
+
+.carousel-content {
+  position: absolute;
+  bottom: 15%;
+  left: 5%;
+  z-index: 20;
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,.6);
+  background-color: rgba(213, 218, 213, 0.4);
+  padding: 3rem;
+}
+ .next{
+  font-size: 40px;
+  font-family: 'Volkhov', serif;
+}
+.Buy{
+  font-size: 30px;
+  font-family: 'Volkhov', serif;
+}
+.started{
+  font-size:20px;
+  font-family: 'Volkhov', serif;
+}
+.btn{
+  font-family: 'Volkhov', serif;
+  padding: 10px 37px;
+  text-decoration: solid;
 }
 
 @media only screen and (max-width:890px){
