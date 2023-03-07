@@ -219,15 +219,12 @@ a.focus:hover,
     color: #243342;
     outline-color: #243342;
     outline-width: thin;
-	 -webkit-appearance: none;
+	 
 }
 .flex-rev textarea{
 	height: 150px;
 }
-button{
-	-webkit-appearance: none;
-	margin-right: 0;
-}
+
 
 
 .info {
@@ -321,4 +318,5 @@ button{
         color: white;
         background: #10571b;
     }
+}
 /* Contact us end */
