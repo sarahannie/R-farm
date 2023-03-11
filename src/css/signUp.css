@@ -47,7 +47,7 @@ body{
     margin-bottom: 30px;
     background-color: #10571b;
     color: white;
-    border: 1px #498752;
+    border: 1px solid #498752;
 
 }
 .bt1{
@@ -75,5 +75,16 @@ body{
 }
 
 @media only screen and(max-width:890px) {
-    
+    .container {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        width: 900px;
+      }
+      
+    .bdy{
+        display: block;
+        justify-content: center;
+        margin-bottom: 5px;
+        padding: 20px;
+    }
 }
