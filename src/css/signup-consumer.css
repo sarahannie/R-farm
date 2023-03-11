@@ -83,3 +83,10 @@ label {
   .login:hover{
     color: #7cab83;
   }
+
+  @media only screen and (max-width: 800px) {
+    body {
+        height: 100vh;
+      }
+     
+}
