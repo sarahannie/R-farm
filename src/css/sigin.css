@@ -4,6 +4,7 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     backdrop-filter: blur(4px);
+    height: 100%;
 }
 
 .bg2{
@@ -84,10 +85,12 @@ label {
     color: #7cab83;
   }
 
-
-  @media only screen and (max-width: 800px) {
+@media only screen and (max-width: 800px) {
     body {
         height: 100vh;
       }
-    
+      .bg2{
+        margin-top: 120px;
+        margin-bottom: 50px;
+    }  
 }
