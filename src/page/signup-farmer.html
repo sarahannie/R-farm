@@ -17,47 +17,48 @@
                 <article class="card-body mx-auto" style="max-width: 400px;">
                     <h4 class="card-title mt-3 text-center">Create Account</h4>
                     <p class="text-center">Let Work Together to Make Earning Easier</p>
-                    <form>
+                    <form  id="regform" action="../page/signin.html" name="register" onsubmit="return validation()" method="post">
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-user"></i> </span>
                          </div>
-                        <input name="" class="form-control" placeholder="Full name" type="text">
+                        <input name="" class="form-control" placeholder="Full name" type="text" id="fullname">
+                        <small id="fnameErr"></small>
                     </div> <!-- form-group// -->
 
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
                          </div>
-                        <input name="" class="form-control" placeholder="Email address" type="email">
+                        <input name="" class="form-control" placeholder="Email address" type="email" id="email">
                     </div> <!-- form-group// -->
 
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="">D.O.R</i> </span>
                          </div>
-                        <input name="" class="form-control" placeholder="Date Of Registeration" type="date">
+                        <input name="" class="form-control" placeholder="Date Of Registeration" type="date" id="dor">
                     </div> <!-- form-group// -->
 
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="">D.O.B</i> </span>
                          </div>
-                        <input name="" class="form-control" placeholder="Date Of Birth" type="date">
+                        <input name="" class="form-control" placeholder="Date Of Birth" type="date" id="dob">
                     </div> <!-- form-group// -->
 
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="">NIN</i> </span>
                          </div>
-                        <input name="" class="form-control" placeholder="NIN Number" type="text">
+                        <input name="" class="form-control" placeholder="NIN Number" type="text" id="nin">
                     </div> <!-- form-group// -->
 
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="">Unique</i> </span>
                          </div>
-                        <input name="" class="form-control" placeholder="FO-0984" type="text">
+                        <input name="" class="form-control" placeholder="FO-0984" type="text" id="unique">
                     </div> <!-- form-group// -->
 
                     <div class="form-group input-group">
@@ -65,11 +66,11 @@
                             <span class="input-group-text"> <i class="">Gender</i> </span>
                          </div>&nbsp;&nbsp;&nbsp;
                          <label class="label2">
-                            <input name="gender" class="gender" type="radio" value="male">
+                            <input name="gender" class="gender" type="radio" value="male" id="gmale">
                             <span>Male</span>
                           </label>
                           <label>
-                            <input name="gender" class="gender" type="radio" value="female">
+                            <input name="gender" class="gender" type="radio" value="female" id="gfemale">
                             <span>Female</span>
                           </label>
                     </div> <!-- form-group// -->
@@ -93,7 +94,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="">Ward</i> </span>
                          </div>
-                        <input name="" class="form-control" placeholder="Ward Name" type="text">
+                        <input name="" class="form-control" placeholder="Ward Name" type="text" id="ward">
                     </div> <!-- form-group// -->
 
 
@@ -113,13 +114,13 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <input class="form-control" placeholder="Create password" type="password">
+                        <input class="form-control" placeholder="Create password" type="password" id="password">
                     </div> <!-- form-group// -->
                     <div class="form-group input-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
                         </div>
-                        <input class="form-control" placeholder="Repeat password" type="password">
+                        <input class="form-control" placeholder="Repeat password" type="password" id="password">
                     </div> <!-- form-group// -->                                      
                     <div class="form-group">
                         <button type="submit" class="btn btn-color btn-block"> Create Account  </button>
@@ -129,6 +130,7 @@
                 </article>  
         </div>
     </div>
+    <script src="../js/signup-farmers.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="../css/bootstrap/js/bootstrap.js"></script>
 </body>
