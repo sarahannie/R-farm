@@ -1,10 +1,26 @@
+let dor = document.getElementById("dor");
+ // validation date of registration;
+
+ let today = new Date();
+ let dd = String(today.getDate()).padStart(2, "0");
+ let mm = String(today.getMonth()+1).padStart(2,"0");
+ let yyyy = today.getFullYear();
+ let defaultDate = yyyy + '-' + mm + '-' + dd;
+
+ console.log(`Default Date: ${defaultDate}`);
+ dor.defaultValue = defaultDate;
+
+
+
+
+
 const validation = (event) => {
    
     let error = 0;
     // picking input
     let fullName = document.getElementById("fullName")
     let email = document.getElementById("email");
-    let dor = document.getElementById("dor");
+    
     let dob = document.getElementById("dob");
     let nin = document.getElementById("nin");
     let unique = document.getElementById('unique');
@@ -18,7 +34,7 @@ const validation = (event) => {
 
     let fnameErr = document.getElementById("fnameErr");
     let emailErr = document.getElementById("emailErr");
-    let dorErr = document.getElementById("dorErr");
+   
     let dobErr = document.getElementById("dobErr");
     let ninErr = document.getElementById("ninErr");
     let uniqueErr = document.getElementById('uniqueErr');
@@ -78,6 +94,8 @@ const validation = (event) => {
         email.style.border = " 1px solid green" ;
         emailErr.textContent=""
     }
+
+   
 
 
     if(error > 0){
