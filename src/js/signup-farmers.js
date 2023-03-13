@@ -59,7 +59,25 @@ const validation = (event) => {
     }
 
 
-    //
+    // validation of email
+    const emailregex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+
+    if(email.value == ""){
+        email.style.border = "1px solid red";
+        emailErr.textContent="Email is required";
+        emailErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
+        error++
+    }
+    else if(!email.value.match(emailregex)){
+        email.style.border = "1px solid red";
+        emailErr.textContent = "please input correct email";
+        emailErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
+        error++
+    }else{
+        email.style.border = " 1px solid green" ;
+        emailErr.textContent=""
+    }
 
 
     if(error > 0){
