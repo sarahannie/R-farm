@@ -11,6 +11,9 @@ let dor = document.getElementById("dor");
  dor.defaultValue = defaultDate;
 
 
+ 
+
+
 
 
 
@@ -94,6 +97,29 @@ const validation = (event) => {
         email.style.border = " 1px solid green" ;
         emailErr.textContent=""
     }
+
+
+    //validation of date of birth
+    
+        let dobValue = dob.value;
+        let dobDate = new Date(dobValue);
+        //calculating user age
+
+        let ageDiff = Date.now() - dobDate.getTime();
+        let ageDate = new Date(ageDiff);
+        let age = Math.abs(ageDate.getUTCFullYear() - 1970)
+
+        if( age < 10 ){
+            event.preventDefault();
+            dob.style.border = "1px solid red";
+            dobErr.textContent = "User must be more than ten year old ";
+            dobErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
+            error++
+        }
+
+    
+    //validation of nin
+
 
    
 
