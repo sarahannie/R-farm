@@ -155,6 +155,8 @@ const validation = (event) => {
         uniqueErr.textContent = "";
       }
 
+    // validation of gender start
+
 
    
 
