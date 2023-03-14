@@ -119,13 +119,14 @@ const validation = (event) => {
 
     
     //validation of nin
+    const ninreg = /^([0-9]{13}).*$/
     if(nin.value == "" ){
         nin.style.border = "1px solid red";
         ninErr.textContent="nin number can not be empty ";
         ninErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
         error++
     }
-   else if(nin.value.length >  13 || nin.value.length < 13 ){
+   else if(! nin.value.match(ninreg) ){
         nin.style.border = "1px solid red";
         ninErr.textContent="Please input the correct nin number";
         ninErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
@@ -136,7 +137,23 @@ const validation = (event) => {
         ninErr.textContent=""
     }
 
-    
+    //validation for unique
+
+    const foregex = /^FO-([0-9]{3})+$/
+    if (unique.value == "") {
+      unique.style.border = "1px solid red"
+      uniqueErr.textContent = "Unique number is required";
+      uniqueErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+      error++
+    }else if(!unique.value.match(foregex)){
+        unique.style.border = "1px solid red"
+        uniqueErr.textContent = "Unique number must follow this formart AO-000";
+        uniqueErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+        error++
+      }else {
+        unique.style.border = "1px solid green"
+        uniqueErr.textContent = "";
+      }
 
 
    
