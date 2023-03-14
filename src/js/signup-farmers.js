@@ -11,6 +11,7 @@ let dor = document.getElementById("dor");
  dor.defaultValue = defaultDate;
 
 
+
  
 
 
@@ -41,7 +42,6 @@ const validation = (event) => {
     let dobErr = document.getElementById("dobErr");
     let ninErr = document.getElementById("ninErr");
     let uniqueErr = document.getElementById('uniqueErr');
-    let gmaleErr = document.getElementById("gmaleErr");
     let gfemaleErr = document.getElementById("gfemaleErr");
     let wardErr = document.getElementById("wardErr");
     let passwordErr = document.getElementById("passwordErr");
@@ -156,6 +156,17 @@ const validation = (event) => {
       }
 
     // validation of gender start
+
+    if(!(gmale.checked && gfemale.checked)){
+       gfemaleErr.textContent = "Please select gender";
+       gfemaleErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+       error++ 
+    }else{
+        gfemaleErr.textContent = "";
+    }
+
+
+    // validation for phone number
 
 
    
