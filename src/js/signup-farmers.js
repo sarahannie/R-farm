@@ -30,7 +30,6 @@ const validation = (event) => {
     let unique = document.getElementById('unique');
     let gmale = document.getElementById("gmale");
     let gfemale = document.getElementById("gfemale");
-    let ward = document.getElementById("ward");
     let password = document.getElementById("password");
     let repassword = document.getElementById("repassword");
 
@@ -44,7 +43,7 @@ const validation = (event) => {
     let uniqueErr = document.getElementById('uniqueErr');
     let gfemaleErr = document.getElementById("gfemaleErr");
     let phonenoErr = document.getElementById("phonenumErr")
-    let wardErr = document.getElementById("wardErr");
+    
     let passwordErr = document.getElementById("passwordErr");
     let repasswordErr = document.getElementById("repasswordErr");
 
@@ -215,6 +214,9 @@ phoneNumberInput.addEventListener('blur', function() {
     phoneNumberInput.focus();
   }
 });
+
+
+// Activites validation
 
 
 
