@@ -119,6 +119,24 @@ const validation = (event) => {
 
     
     //validation of nin
+    if(nin.value == "" ){
+        nin.style.border = "1px solid red";
+        ninErr.textContent="nin number can not be empty ";
+        ninErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
+        error++
+    }
+   else if(nin.value.length >  13 || nin.value.length < 13 ){
+        nin.style.border = "1px solid red";
+        ninErr.textContent="Please input the correct nin number";
+        ninErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
+        error++
+    }
+    else{
+        nin.style.border = " 1px solid green" ;
+        ninErr.textContent=""
+    }
+
+    
 
 
    
