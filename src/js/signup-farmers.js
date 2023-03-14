@@ -43,6 +43,7 @@ const validation = (event) => {
     let ninErr = document.getElementById("ninErr");
     let uniqueErr = document.getElementById('uniqueErr');
     let gfemaleErr = document.getElementById("gfemaleErr");
+    let phonenoErr = document.getElementById("phonenumErr")
     let wardErr = document.getElementById("wardErr");
     let passwordErr = document.getElementById("passwordErr");
     let repasswordErr = document.getElementById("repasswordErr");
@@ -167,6 +168,55 @@ const validation = (event) => {
 
 
     // validation for phone number
+    // Get the phone number input element
+const phoneNumberInput = document.getElementById('phoneInput');
+
+// Get the selected country code from the dropdown
+const countryCodeDropdown = document.getElementById('country-code');
+const selectedCountryCode = countryCodeDropdown.options[countryCodeDropdown.selectedIndex].text;
+
+// Define a regular expression pattern for the selected country code
+let phonePattern;
+switch (selectedCountryCode) {
+  case '+256':
+    phonePattern = /^07\d{8}$/; // Uganda phone number format: 07XXXXXXXX
+    break;
+  case '+254':
+    phonePattern = /^07\d{8}$/; // Kenya phone number format: 07XXXXXXXX
+    break;
+  case '+255':
+    phonePattern = /^07\d{8}$/; // Tanzania phone number format: 07XXXXXXXX
+    break;
+  case '+234':
+    phonePattern = /^0\d{10}$/; // Nigeria phone number format: 0XXXXXXXXXX
+    break;
+  default:
+    phonePattern = /^\d+$/; // Default pattern for other country codes
+    break;
+}
+
+// Add an event listener to the phone number input to validate its value
+phoneNumberInput.addEventListener('blur', function() {
+  const phoneValue = this.value;
+  if (!phoneValue.match(phonePattern)) {
+    phoneNumberInput.style.border = "1px solid red";
+    phonenoErr.textContent ="Please enter valid number";
+    phonenoErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } 
+  else if (phoneValue == "") {
+    phoneNumberInput.style.border = "1px solid red";
+    phonenoErr.textContent ="Please enter phone number";
+    phonenoErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+    error++
+  } 
+  else {
+    phoneNumberInput.style.border = "1px solid green";
+    phoneNumberInput.focus();
+  }
+});
+
+
 
 
    
