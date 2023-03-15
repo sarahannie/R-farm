@@ -19,7 +19,7 @@ let dor = document.getElementById("dor");
 
 
 const validation = (event) => {
-   
+    let isValid = true;
     let error = 0;
     // picking input
     let fullName = document.getElementById("fullName")
@@ -30,8 +30,8 @@ const validation = (event) => {
     let unique = document.getElementById('unique');
     let gmale = document.getElementById("gmale");
     let gfemale = document.getElementById("gfemale");
-    let password = document.getElementById("password");
-    let repassword = document.getElementById("repassword");
+    let passwordInput = document.getElementById('password');
+    let repasswordInput = document.getElementById('repassword');
 
     // picking input error
 
@@ -44,41 +44,43 @@ const validation = (event) => {
     let gfemaleErr = document.getElementById("gfemaleErr");
     let phonenoErr = document.getElementById("phonenumErr")
     
-    let passwordErr = document.getElementById("passwordErr");
-    let repasswordErr = document.getElementById("repasswordErr");
+    let passwordError = document.getElementById('passwordErr');
+    let repasswordError = document.getElementById('repasswordErr');
 
-    // validation of fullname
-    if(fullName.value == ""){
-        fullName.style.border = "1px solid red";
-        fnameErr.innerHTML ="Please input your FullName";
-        fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++
+    // Validation of fullname
+if (isValid) {
+    if (fullName.value == "") {
+      fullName.style.border = "1px solid red";
+      fnameErr.innerHTML = "Please input your FullName";
+      fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+      isValid = false;
+    } else if (!/^[a-zA-Z\s]+$/.test(fullName.value)) {
+      fullName.style.border = "1px solid red";
+      fnameErr.innerHTML = "Please input vaild name ";
+      fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+      isValid = false;
+    } else if (fullName.value.length < 5) {
+      fullName.style.border = "1px solid red";
+      fnameErr.innerHTML = "Please the full name must be atleast 5 letters";
+      fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+      isValid = false;
+    } else if (fullName.value.length > 50) {
+      fullName.style.border = "1px solid red";
+      fnameErr.innerHTML = "Please the full name should not exceed 50 letters";
+      fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+      isValid = false;
+    } else {
+      fullName.style.border = "1px solid green";
+      fullName.innerHTML = "";
     }
-    else if (!/^[a-zA-Z\s]+$/.test(fullName.value)) {
-        fullName.style.border = "1px solid red";
-        fnameErr.innerHTML ="Please input vaild name ";
-        fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++;
-    }
-    else if(fullName.value.length < 5){
-        fullName.style.border = "1px solid red";
-        fnameErr.innerHTML ="Please the full name must be atleast 5 letters";
-        fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++
-    }
-    else if(fullName.value.length > 50){
-        fullName.style.border = "1px solid red";
-        fnameErr.innerHTML ="Please the full name should not exceed 50 letters";
-        fnameErr.style = "color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++
-    }
-    else{
-        fullName.style.border = "1px solid green";
-        fullName.innerHTML = "";
-    }
+} 
+
+
+
 
 
     // validation of email
+    if (isValid) {
     const emailregex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
@@ -86,21 +88,23 @@ const validation = (event) => {
         email.style.border = "1px solid red";
         emailErr.textContent="Email is required";
         emailErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
-        error++
+        isValid = false;
     }
     else if(!email.value.match(emailregex)){
         email.style.border = "1px solid red";
         emailErr.textContent = "please input correct email";
         emailErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
-        error++
+        isValid = false;
     }else{
         email.style.border = " 1px solid green" ;
         emailErr.textContent=""
     }
+    }
+
 
 
     //validation of date of birth
-    
+    if (isValid) {  
         let dobValue = dob.value;
         let dobDate = new Date(dobValue);
         //calculating user age
@@ -114,23 +118,27 @@ const validation = (event) => {
             dob.style.border = "1px solid red";
             dobErr.textContent = "User must be more than ten year old ";
             dobErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
-            error++
+            isValid = false;
+        }else{
+            dob.style.border = "1px solid green";
+            dobErr.textContent = " "; 
         }
-
+    } 
     
     //validation of nin
+    if (isValid) {
     const ninreg = /^([0-9]{13}).*$/
     if(nin.value == "" ){
         nin.style.border = "1px solid red";
         ninErr.textContent="nin number can not be empty ";
         ninErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
-        error++
+        isValid = false;
     }
    else if(! nin.value.match(ninreg) ){
         nin.style.border = "1px solid red";
         ninErr.textContent="Please input the correct nin number";
         ninErr.style="color:red; font-size:11px; font-family:Arial, Helvetica, sans-serif;"
-        error++
+        isValid = false;
     }
     else{
         nin.style.border = " 1px solid green" ;
@@ -144,29 +152,32 @@ const validation = (event) => {
       unique.style.border = "1px solid red"
       uniqueErr.textContent = "Unique number is required";
       uniqueErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-      error++
+      isValid = false;
     }else if(!unique.value.match(foregex)){
         unique.style.border = "1px solid red"
         uniqueErr.textContent = "Unique number must follow this formart AO-000";
         uniqueErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-        error++
+        isValid = false;
       }else {
         unique.style.border = "1px solid green"
         uniqueErr.textContent = "";
       }
+    }
 
     // validation of gender start
-
+    if (isValid) {
     if(!(gmale.checked && gfemale.checked)){
        gfemaleErr.textContent = "Please select gender";
        gfemaleErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-       error++ 
+       isValid = false; 
     }else{
         gfemaleErr.textContent = "";
     }
+}
 
 
     // validation for phone number
+if (isValid) {
     // Get the phone number input element
 const phoneNumberInput = document.getElementById('phoneInput');
 
@@ -201,32 +212,83 @@ phoneNumberInput.addEventListener('blur', function() {
     phoneNumberInput.style.border = "1px solid red";
     phonenoErr.textContent ="Please enter valid number";
     phonenoErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
+    isValid = false;
   } 
   else if (phoneValue == "") {
     phoneNumberInput.style.border = "1px solid red";
     phonenoErr.textContent ="Please enter phone number";
     phonenoErr.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
-    error++
+    isValid = false;
   } 
   else {
     phoneNumberInput.style.border = "1px solid green";
     phoneNumberInput.focus();
   }
 });
+}
 
+if (isValid) {
 
-// Activites validation
+// Activities validation
+const activitiesDropdown = document.getElementById('activities');
 
+activitiesDropdown.addEventListener('change', function() {
+  const selectedActivity = activitiesDropdown.value;
+  
+  if (selectedActivity === '') {
+    // No activity selected, display error message
+    activitiesDropdown.classList.add('is-invalid');
+    isValid = false;
+  } else {
+    // Valid activity selected, remove error message (if any)
+    activitiesDropdown.classList.remove('is-invalid');
+  }
+});
+}
 
+if (isValid) {
 
-
-   
-
-
-    if(error > 0){
-        event.preventDefault()
+// validation for password
+function validatePassword() {
+    const password = passwordInput.value;
+    const repassword = repasswordInput.value;
+    
+    if (password === '' || password.length < 8) {
+      // Password is too short or empty
+      passwordInput.classList.add('is-invalid');
+      passwordError.textContent = 'Password must be at least 8 characters long';
+      passwordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+      isValid = false;
+    } else {
+      // Password is valid, remove error message (if any)
+      passwordInput.classList.remove('is-invalid');
+      passwordError.textContent = '';
     }
-   
+    
+    if (repassword === '' || repassword !== password) {
+      // Re-entered password doesn't match or is empty
+      repasswordInput.classList.add('is-invalid');
+      repasswordError.textContent = 'Passwords do not match';
+      repasswordError.style = "color: red; font-size:11px; font-family:Arial, Helvetica, sans-serif;";
+      isValid = false;
+    } else {
+      // Re-entered password matches, remove error message (if any)
+      repasswordInput.classList.remove('is-invalid');
+      repasswordError.textContent = '';
+    }
+  }
+  
+  passwordInput.addEventListener('input', validatePassword);
+  repasswordInput.addEventListener('input', validatePassword);
+
 
 }
+
+    // if all validation passed, submit the form
+    if (isValid) {
+        event.preventDefault();
+        form.submit();
+        }
+     }
+   
+
