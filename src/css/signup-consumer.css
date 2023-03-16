@@ -84,6 +84,12 @@ label {
     color: #7cab83;
   }
 
+  input.form-control:focus {
+    outline: none !important;
+    border: none; /* set border color */
+    box-shadow: none; 
+  }
+
   @media only screen and (max-width: 800px) {
     body {
         height: 100vh;
