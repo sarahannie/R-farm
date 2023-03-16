@@ -2,7 +2,7 @@ const validation = () => {
     let isValid = true; 
   
     
-    // picking input
+    // picking input`
     let email = document.getElementById("email");
     let passwordInput = document.getElementById('password');
 

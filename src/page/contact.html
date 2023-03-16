@@ -44,27 +44,31 @@
             </div>
             <div class="form">
                 <h1>Get In Touch</h1>
-                <form action="">
+                <form  id="regform" action="#" name="register" onsubmit="return validation()" method="POST">
                     <div class="flex-rev">
-                        <input type="text" placeholder="John Deo" name="name" id="name" />
+                        <small id="fnameErr"></small>
+                        <input type="text" placeholder="John Deo" name="name" id="fullName" />
                         <label for="name">Full Name</label>
                     </div>
                     <div class="flex-rev">
+                        <small id="emailErr"></small>
                         <input type="email" placeholder="JohnDeo@ufarm.com" name="email" id="email" />
                         <label for="email">Your Email</label>
                     </div>
     
                     <div class="flex-rev">
-                        <textarea placeholder="I have an product i want to sell...." name="message" id="message" /></textarea>
+                        <small id="emailmessErr"></small>
+                        <textarea placeholder="I have an product i want to sell...." name="message" id="emailmess" /></textarea>
                         <label for="message">Email Message</label>
                     </div>
+                    
                     <button class="btn-cl">Send Email</button>
                 </form>
             </div>
         </div>
     </div>
       <!-- contact us end -->
-      
+      <script src="../js/contact.js"></script>
       <script src="../js/includes.js"></script>
       <script src="../css/bootstrap/js/bootstrap.js"></script>
 </body>
