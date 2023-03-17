@@ -2,8 +2,8 @@
 :root {
   --header-height: 3rem;
   --nav-width: 68px;
-  --first-color: #4723d9;
-  --first-color-light: #afa5d9;
+  --first-color: #10571b;
+  --first-color-light: #a4c7a8;
   --white-color: #f7f6fb;
   --body-font: "Nunito", sans-serif;
   --normal-font-size: 1rem;
@@ -83,14 +83,24 @@ a {
 }
 .nav_logo {
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
 }
 .nav_logo-icon {
   font-size: 1.25rem;
   color: var(--white-color);
+  display: inline-block;
+  width: 20%;
+  margin-right: -10px;
+  
 }
 .nav_logo-name {
   color: var(--white-color);
   font-weight: 700;
+  
+   
+  
+  
 }
 .nav_link {
   position: relative;
