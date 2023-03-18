@@ -149,6 +149,14 @@ a {
   margin-top: 21rem;
 }
 
+.bg-cover{
+  margin-top: 60px;
+}
+
+.marg{
+  margin-top: 20%;
+}
+
 
 
 @media screen and (min-width: 768px) {
