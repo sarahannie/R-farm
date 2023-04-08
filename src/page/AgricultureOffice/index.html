@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/src/css/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/src/css/AgricultureOffice/index.css" />
+    <link rel="stylesheet" href="/src/css/AgricultureOffice/include.css" />
     <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap-extended.min.css">
-<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
-<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
-<link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
-<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/fonts/simple-line-icons/style.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/colors.min.css">
+    <link rel="stylesheet" type="text/css" href="https://pixinvent.com/stack-responsive-bootstrap-4-admin-template/app-assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
 
     <link
       rel="stylesheet"
@@ -130,7 +132,43 @@
                   </div>
                   <div class="media-body text-right">
                     <h3>64.89 %</h3>
-                    <span>Total Sales Daliy</span>
+                    <span>Total Daliy Sales</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12 marg">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="success">156</h3>
+                    <span>New Constomer </span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-user success font-large-2 float-right"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-sm-6 col-12 marg">
+          <div class="card">
+            <div class="card-content">
+              <div class="card-body">
+                <div class="media d-flex">
+                  <div class="media-body text-left">
+                    <h3 class="warning">123</h3>
+                    <span>Orders for the month</span>
+                  </div>
+                  <div class="align-self-center">
+                    <i class="icon-pie-chart warning font-large-2 float-right"></i>
                   </div>
                 </div>
               </div>
@@ -139,6 +177,12 @@
         </div>
           </div>
         </div>
+        <!-- careating a chart -->
+        <div style="width: 800px;"><canvas id="acquisitions"></canvas></div>
+
+
+      
+
 
         
 
@@ -149,7 +193,7 @@
       <h1>https://codepen.io/lesliesamafful/pen/oNXgmBG</h1>
     
     <!--Container Main end-->
-
+  
     <script src="/src/js/AgricultureOffice/index.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/src/css/bootstrap/js/bootstrap.bundle.min.js"></script>

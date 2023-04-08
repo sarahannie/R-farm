@@ -36,3 +36,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
      // Your code to run since DOM is loaded and ready
     });
+
+
+// chart
+
+(async function() {
+    const data = [
+    { month: "Jan", count: 5 },
+    { month: "Feb", count: 30 },
+    { month: "Mar", count: 2 },
+    { month: "Apr", count: 20 },
+    { month: "May", count: 22 },
+    { month: "Jun", count: 14 },
+    { month: "Jul", count: 28 },
+    ];
+
+    new Chart(
+    document.getElementById('acquisitions'),
+    {
+        type: 'line',
+        data: {
+        labels: data.map(row => row.month),
+        datasets: [
+            {
+            backgroundColor: '#fff',
+            label: 'Acquisitions by year',
+            data: data.map(row => row.count)
+            }
+        ]
+        }
+    }
+    );
+})();
